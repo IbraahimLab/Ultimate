@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="CLI demo preview">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0e1523"/>
+      <stop offset="100%" stop-color="#14263b"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1d2f45"/>
+      <stop offset="100%" stop-color="#16283a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b8c84"/>
+      <stop offset="100%" stop-color="#0b5f6f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+
+  <rect x="90" y="56" width="1100" height="608" rx="16" fill="#0f1c2a" stroke="#29415a"/>
+  <rect x="90" y="56" width="1100" height="52" rx="16" fill="url(#title)"/>
+  <rect x="90" y="92" width="1100" height="16" fill="#16283a"/>
+
+  <circle cx="118" cy="82" r="7" fill="#ef5d5d"/>
+  <circle cx="142" cy="82" r="7" fill="#f2bf5a"/>
+  <circle cx="166" cy="82" r="7" fill="#4db67f"/>
+  <text x="214" y="88" font-size="16" fill="#b6cee9" font-family="'Courier New', monospace">vibe-agent terminal session</text>
+
+  <text x="118" y="146" font-size="20" fill="#7ee7de" font-family="'Courier New', monospace">$ vibe-agent</text>
+  <text x="118" y="186" font-size="19" fill="#d7e6fa" font-family="'Courier New', monospace">Vibe Coding Agent ready. Type a coding task in plain English.</text>
+
+  <text x="118" y="240" font-size="20" fill="#7ee7de" font-family="'Courier New', monospace">You&gt; add OTP login and tests for invalid token edge cases</text>
+  <text x="118" y="280" font-size="18" fill="#b8cae0" font-family="'Courier New', monospace">[Loop 1/6] plan -&gt; act -&gt; verify</text>
+  <text x="118" y="314" font-size="18" fill="#e2eefb" font-family="'Courier New', monospace">Plan:</text>
+  <text x="140" y="344" font-size="17" fill="#d7e6fa" font-family="'Courier New', monospace">1. Inspect auth modules and existing test layout</text>
+  <text x="140" y="372" font-size="17" fill="#d7e6fa" font-family="'Courier New', monospace">2. Implement OTP service + endpoint integration</text>
+  <text x="140" y="400" font-size="17" fill="#d7e6fa" font-family="'Courier New', monospace">3. Add coverage for invalid and expired token scenarios</text>
+
+  <rect x="118" y="430" width="1040" height="116" rx="10" fill="#11253b" stroke="#29415a"/>
+  <text x="140" y="462" font-size="17" fill="#b8cae0" font-family="'Courier New', monospace">Proposed diff for src/auth/otp.ts:</text>
+  <text x="140" y="494" font-size="16" fill="#8fe388" font-family="'Courier New', monospace">+ export async function validateOtpToken(...) { ... }</text>
+  <text x="140" y="522" font-size="16" fill="#8fe388" font-family="'Courier New', monospace">+ if (token.isExpired) throw new Error("Token expired");</text>
+
+  <rect x="118" y="564" width="218" height="44" rx="22" fill="url(#accent)"/>
+  <text x="227" y="592" text-anchor="middle" font-size="16" fill="#ffffff" font-family="Arial, sans-serif" font-weight="700">Apply this change? [y/N]</text>
+  <text x="360" y="592" font-size="18" fill="#7ee7de" font-family="'Courier New', monospace">y</text>
+
+  <text x="118" y="640" font-size="17" fill="#8fe388" font-family="'Courier New', monospace">[verify] Verify passed: npm run -s test --if-present</text>
+</svg>

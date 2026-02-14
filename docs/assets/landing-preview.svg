@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Landing page preview">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f4f2ea"/>
+      <stop offset="100%" stop-color="#e9f6f4"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f7f0df"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b8c84"/>
+      <stop offset="100%" stop-color="#0b5f6f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1280" height="72" fill="#fffdf6"/>
+  <line x1="0" y1="72" x2="1280" y2="72" stroke="#ddd6c8"/>
+
+  <rect x="34" y="20" width="34" height="34" rx="8" fill="url(#brand)"/>
+  <text x="51" y="43" text-anchor="middle" font-size="17" fill="#ffffff" font-family="Arial, sans-serif" font-weight="700">U</text>
+  <text x="82" y="43" font-size="20" fill="#102231" font-family="Arial, sans-serif" font-weight="700">ultimate-vibe-agent</text>
+
+  <text x="850" y="43" font-size="14" fill="#546470" font-family="Arial, sans-serif">Features</text>
+  <text x="930" y="43" font-size="14" fill="#546470" font-family="Arial, sans-serif">Use Cases</text>
+  <text x="1024" y="43" font-size="14" fill="#546470" font-family="Arial, sans-serif">Examples</text>
+  <rect x="1110" y="22" width="132" height="34" rx="17" fill="#ffffff" stroke="#ddd6c8"/>
+  <text x="1176" y="43" text-anchor="middle" font-size="14" fill="#102231" font-family="Arial, sans-serif" font-weight="600">GitHub</text>
+
+  <rect x="44" y="102" width="1192" height="284" rx="22" fill="url(#hero)" stroke="#ddd6c8"/>
+  <text x="88" y="144" font-size="13" fill="#0b5f6f" font-family="Arial, sans-serif" font-weight="700">AI PAIR PROGRAMMER FOR PRODUCT TEAMS</text>
+  <text x="88" y="194" font-size="47" fill="#102231" font-family="Arial, sans-serif" font-weight="800">Describe the feature.</text>
+  <text x="88" y="246" font-size="47" fill="#102231" font-family="Arial, sans-serif" font-weight="800">Get working code you can ship.</text>
+  <text x="88" y="286" font-size="19" fill="#546470" font-family="Arial, sans-serif">Talk in plain English, review diffs, and keep control over every change.</text>
+
+  <rect x="88" y="316" width="176" height="44" rx="22" fill="#0b8c84"/>
+  <text x="176" y="344" text-anchor="middle" font-size="15" fill="#ffffff" font-family="Arial, sans-serif" font-weight="700">Start in 2 Minutes</text>
+  <rect x="276" y="316" width="162" height="44" rx="22" fill="#f4fbfa" stroke="#93ccc7"/>
+  <text x="357" y="344" text-anchor="middle" font-size="15" fill="#0b5f6f" font-family="Arial, sans-serif" font-weight="700">See Examples</text>
+
+  <rect x="44" y="416" width="382" height="120" rx="14" fill="#fffdf6" stroke="#ddd6c8"/>
+  <text x="68" y="454" font-size="21" fill="#102231" font-family="Arial, sans-serif" font-weight="700">Ship Faster</text>
+  <text x="68" y="486" font-size="16" fill="#546470" font-family="Arial, sans-serif">Move from product request to merge-ready code.</text>
+
+  <rect x="449" y="416" width="382" height="120" rx="14" fill="#fffdf6" stroke="#ddd6c8"/>
+  <text x="473" y="454" font-size="21" fill="#102231" font-family="Arial, sans-serif" font-weight="700">Fewer Broken PRs</text>
+  <text x="473" y="486" font-size="16" fill="#546470" font-family="Arial, sans-serif">Checks run during the workflow.</text>
+
+  <rect x="854" y="416" width="382" height="120" rx="14" fill="#fffdf6" stroke="#ddd6c8"/>
+  <text x="878" y="454" font-size="21" fill="#102231" font-family="Arial, sans-serif" font-weight="700">Safer Team Adoption</text>
+  <text x="878" y="486" font-size="16" fill="#546470" font-family="Arial, sans-serif">Diff approvals and policy guardrails.</text>
+
+  <rect x="44" y="564" width="160" height="36" rx="18" fill="#fffdf6" stroke="#ddd6c8"/>
+  <text x="124" y="587" text-anchor="middle" font-size="14" fill="#102231" font-family="Arial, sans-serif" font-weight="700">SaaS Teams</text>
+  <rect x="214" y="564" width="160" height="36" rx="18" fill="#fffdf6" stroke="#ddd6c8"/>
+  <text x="294" y="587" text-anchor="middle" font-size="14" fill="#102231" font-family="Arial, sans-serif" font-weight="700">Startup MVPs</text>
+  <rect x="384" y="564" width="160" height="36" rx="18" fill="#fffdf6" stroke="#ddd6c8"/>
+  <text x="464" y="587" text-anchor="middle" font-size="14" fill="#102231" font-family="Arial, sans-serif" font-weight="700">Internal Tools</text>
+  <rect x="554" y="564" width="160" height="36" rx="18" fill="#fffdf6" stroke="#ddd6c8"/>
+  <text x="634" y="587" text-anchor="middle" font-size="14" fill="#102231" font-family="Arial, sans-serif" font-weight="700">Agency Work</text>
+</svg>

@@ -1,60 +1,84 @@
 # ultimate-vibe-agent
 
-Build features from plain English requests inside your real codebase.
+[![Node](https://img.shields.io/badge/Node-%3E%3D20-1f6f4a?style=for-the-badge)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-2f74c0?style=for-the-badge)](https://www.typescriptlang.org/)
+[![Provider](https://img.shields.io/badge/Provider-Groq%20%2B%20Kimi-0b8c84?style=for-the-badge)](https://console.groq.com/)
+[![License](https://img.shields.io/badge/License-MIT-c96d1a?style=for-the-badge)](LICENSE)
 
-`ultimate-vibe-agent` is an AI coding teammate that does more than generate snippets:
+An AI coding teammate for real product work.
 
-- understands your repository structure
-- reads and edits multiple files
-- runs real commands and checks
-- asks for write approval with clear diffs
-- keeps memory of project conventions
-- enforces policy + audit trails for safer team usage
-
----
-
-## Why This Product Exists
-
-Most AI coding tools look good in demos but break on real projects because they ignore context.
-
-This product is built for real software delivery:
-
-- existing repositories
-- active teams
-- deadlines
-- quality standards
-
-You can use it for feature delivery, bug fixing, refactors, and repetitive engineering tasks while keeping humans in control.
+Describe features in plain English.  
+Get context-aware code changes, diff review, verification loops, and safer team adoption.
 
 ---
 
-## What You Get
+## Product Preview
 
-### 1) Natural Language to Working Code
-Describe what you want in simple English:
+### Landing Experience
 
-> "Add forgot-password flow with email token and tests."
+![Landing Page Preview](docs/assets/landing-preview.svg)
 
-The agent plans, edits, validates, and iterates.
+### CLI Workflow
 
-### 2) Real Codebase Awareness
-It scans your project and tracks symbols/imports so it can make grounded changes.
+![CLI Demo Preview](docs/assets/cli-demo.svg)
 
-### 3) Plan -> Act -> Verify Loop
-Not one-shot guessing. It uses iterative steps and verifies work using commands.
+---
 
-### 4) Diff Approval Before Writes
-Every write is previewed with a unified diff and requires approval.
+## Why Teams Use This
 
-### 5) Team Safety
-Policy rules, secret detection, and audit logs make it safer to adopt in shared repos.
+- Build faster from product request to working code
+- Reduce broken PRs with verification in the loop
+- Keep control with manual diff approval before writes
+- Work inside existing codebases, not toy examples
+- Add governance via policy controls and audit logs
 
-### 6) Multi-Interface Usage
-Use whichever fits your workflow:
+---
 
-- CLI (`vibe-agent`)
-- JavaScript SDK (`ultimate-vibe-agent`)
-- Python wrapper SDK (`vibe_agent_sdk`)
+## Core Product Capabilities
+
+### Natural Language Feature Delivery
+You can ask:
+
+> "Add onboarding checklist with completion state and tests."
+
+The agent plans and executes work against your project.
+
+### Real Codebase Awareness
+It reads multiple files, tracks symbols, understands imports/usages, and maps dependencies.
+
+### Iterative Reliability Loop
+It follows plan -> act -> verify and retries fixes when checks fail.
+
+### Human-Controlled Editing
+Every `write_file` is shown as diff and needs approval.
+
+### Memory Across Sessions
+Project conventions and architecture notes are persisted and reused.
+
+### Team Safety
+Policy rules, secret detection, audit trails, and rollback support.
+
+---
+
+## Architecture
+
+```mermaid
+flowchart LR
+    U[User Prompt] --> A[Agent Runtime]
+    A --> CI[Code Intelligence]
+    A --> TO[Tool Runner]
+    A --> ME[Memory Store]
+    A --> PO[Policy Guardrails]
+    TO --> FS[File System]
+    TO --> SH[Shell Commands]
+    TO --> VF[Verify Commands]
+    CI --> IDX[Project Index]
+    PO --> AU[Audit Log]
+    VF --> ST[Stack Trace Parser]
+    ST --> A
+    A --> D[Diff Preview]
+    D --> U
+```
 
 ---
 
@@ -68,7 +92,7 @@ npm install
 
 ### 2) Configure provider
 
-Create `.env` (or copy `.env.example`) and set:
+Copy `.env.example` to `.env` and set:
 
 ```env
 GROQ_API_KEY=your_groq_api_key_here
@@ -85,30 +109,28 @@ npm run dev
 ### 4) Run one-shot task
 
 ```bash
-npm run dev -- --goal "add onboarding checklist feature with tests"
+npm run dev -- --goal "add forgot-password flow with tests"
 ```
 
 ---
 
-## CLI Usage
+## Usage Modes
 
-If installed globally:
+### CLI
 
 ```bash
 npm install -g ultimate-vibe-agent
 vibe-agent
 ```
 
-Useful commands inside chat:
+In-chat commands:
 
-- `/task <goal>` run a task
-- `/config` view active runtime settings
-- `/help` command help
-- `/exit` quit
+- `/task <goal>`
+- `/config`
+- `/help`
+- `/exit`
 
----
-
-## JavaScript SDK Example
+### JavaScript SDK
 
 ```ts
 import { CodingAgent, loadRuntimeConfig } from "ultimate-vibe-agent";
@@ -129,12 +151,10 @@ const ui = {
   confirm: async () => true,
 };
 
-await agent.runTask("refactor auth flow and add regression tests", ui);
+await agent.runTask("refactor payment retries and add regression tests", ui);
 ```
 
----
-
-## Python SDK Example
+### Python SDK Wrapper
 
 ```python
 from vibe_agent_sdk import VibeAgentClient
@@ -149,7 +169,7 @@ client = VibeAgentClient(
 )
 
 result = client.run_task(
-    "optimize product search endpoint and add tests",
+    "optimize search endpoint and add test coverage",
     max_iterations=6,
     check=False,
 )
@@ -158,7 +178,7 @@ print(result.returncode)
 print(result.stdout)
 ```
 
-Install Python package:
+Install the Python package:
 
 ```bash
 pip install ultimate-vibe-agent
@@ -172,7 +192,7 @@ uv pip install ultimate-vibe-agent
 
 ---
 
-## Core Tooling Built In
+## Built-In Tooling
 
 - `list_files`
 - `read_file`
@@ -188,29 +208,17 @@ uv pip install ultimate-vibe-agent
 
 ---
 
-## Product Workflow (What Users Experience)
-
-1. User describes a feature in plain English.
-2. Agent plans concrete steps.
-3. Agent inspects and edits relevant files.
-4. User reviews diffs before write.
-5. Agent runs verification commands.
-6. Agent retries fixes if checks fail.
-7. User gets a change summary and audit trail.
-
----
-
 ## Safety and Governance
 
-Default safety behavior includes:
+Default safeguards include:
 
-- command policy controls
-- blocked sensitive write paths (like `.env`, `.git/*`)
-- secret pattern detection before writes
+- command policy checks
+- blocked sensitive write paths (for example `.env`, `.git/*`)
+- secret detection before write
 - full session audit logs
-- rollback option for unresolved bad sessions
+- rollback option when unresolved failures remain
 
-State and logs are stored under:
+State artifacts:
 
 - `.vibe-agent/memory.json`
 - `.vibe-agent/policy.json`
@@ -232,30 +240,12 @@ State and logs are stored under:
 | `VIBE_MAX_TOOL_OUTPUT_CHARS` | Output truncation limit | `18000` |
 | `VIBE_MAX_SCAN_FILES` | Indexing limit | `6000` |
 | `VIBE_AUTO_REPAIR_ROUNDS` | Retry cap for repeated failures | `3` |
-| `VIBE_AUTO_VERIFY` | Auto-run detected verify commands | `true` |
+| `VIBE_AUTO_VERIFY` | Auto-run verify commands | `true` |
 | `VIBE_STATE_DIR` | Agent state directory | `.vibe-agent` |
 
 ---
 
-## Landing Page
-
-Preview locally:
-
-```bash
-npm run landing:serve
-```
-
-Then open:
-
-`http://localhost:4173`
-
-For Vercel deployment:
-
-- Root Directory: `landing`
-
----
-
-## Build and Validation
+## Build, Run, and Validate
 
 ```bash
 npm run check
@@ -271,11 +261,25 @@ npm run build:py
 
 ---
 
+## Landing Page
+
+Serve locally:
+
+```bash
+npm run landing:serve
+```
+
+Open `http://localhost:4173`.
+
+Vercel deployment:
+
+- Root Directory: `landing`
+
+---
+
 ## Release
 
-Automated publish setup exists for both npm and PyPI.
-
-Use one command after version bump and commit:
+One-command release after version bump and commit:
 
 ```bash
 release.cmd 0.1.1
