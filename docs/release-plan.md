@@ -3,11 +3,11 @@
 ## Package Targets
 
 1. **JavaScript SDK + CLI**
-   - Package: `Ultimate`
+   - Package: `ultimate-vibe-agent`
    - Registry: npm
    - Contents: `dist/` + `README.md` + `LICENSE`
 2. **Python SDK**
-   - Package: `Ultimate`
+   - Package: `ultimate-vibe-agent`
    - Registry: PyPI
    - Source path: `packages/python-sdk`
 
@@ -55,25 +55,25 @@ Both GitHub workflows then auto-publish npm and PyPI.
 ### npm
 
 ```bash
-npm install -g Ultimate
+npm install -g ultimate-vibe-agent
 ```
 
 ### pip
 
 ```bash
-pip install Ultimate
+pip install ultimate-vibe-agent
 ```
 
 ### uv pip
 
 ```bash
-uv pip install Ultimate
+uv pip install ultimate-vibe-agent
 ```
 
 ### uv tool (for CLI-like install)
 
 ```bash
-uv tool install Ultimate
+uv tool install ultimate-vibe-agent
 ```
 
 ## Trusted Publishing Setup

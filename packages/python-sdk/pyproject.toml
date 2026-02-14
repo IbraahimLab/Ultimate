@@ -3,7 +3,7 @@ requires = ["hatchling>=1.27.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "Ultimate"
+name = "ultimate-vibe-agent"
 version = "0.1.0"
 description = "Python SDK wrapper for the Vibe Coding Agent CLI"
 readme = "README.md"

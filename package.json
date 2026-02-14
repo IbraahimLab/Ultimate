@@ -1,5 +1,5 @@
 {
-  "name": "Ultimate",
+  "name": "ultimate-vibe-agent",
   "version": "0.1.0",
   "description": "MVP coding agent CLI with plan/act/verify and diff approvals",
   "type": "module",

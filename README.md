@@ -115,7 +115,7 @@ See `.env.example` for all values:
 This package now exports a JS SDK surface:
 
 ```ts
-import { CodingAgent, loadRuntimeConfig } from "Ultimate";
+import { CodingAgent, loadRuntimeConfig } from "ultimate-vibe-agent";
 ```
 
 Dry-run package check:
