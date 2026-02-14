@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+*.log
+.vibe-agent/
+packages/python-sdk/dist/
+packages/python-sdk/*.egg-info/

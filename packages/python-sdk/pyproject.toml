@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "Ultimate"
+version = "0.1.0"
+description = "Python SDK wrapper for the Vibe Coding Agent CLI"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Vibe Agent Team" }]
+dependencies = []
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://example.com/vibe-agent"
+Repository = "https://example.com/vibe-agent"
+
+[project.scripts]
+vibe-agent-py = "vibe_agent_sdk.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vibe_agent_sdk"]
