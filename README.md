@@ -1,20 +1,74 @@
-# Vibe Coding Agent
+# ultimate-vibe-agent
 
-Coding agent runtime with:
+Build features from plain English requests inside your real codebase.
 
-- CLI chat for natural language coding tasks
-- project scanner + symbol index + import/use tracking
-- dependency map (Node + Python)
-- iterative `plan -> act -> verify` loop with auto-repair retries
-- diff preview + manual approval before writes
-- rollback on unresolved verification failures
-- persistent memory + conventions across sessions
-- policy guardrails + secret checks + audit log
-- JS SDK exports + Python SDK packaging scaffold
+`ultimate-vibe-agent` is an AI coding teammate that does more than generate snippets:
 
-## Provider Setup (Groq + Kimi)
+- understands your repository structure
+- reads and edits multiple files
+- runs real commands and checks
+- asks for write approval with clear diffs
+- keeps memory of project conventions
+- enforces policy + audit trails for safer team usage
 
-Use these env variables in `.env`:
+---
+
+## Why This Product Exists
+
+Most AI coding tools look good in demos but break on real projects because they ignore context.
+
+This product is built for real software delivery:
+
+- existing repositories
+- active teams
+- deadlines
+- quality standards
+
+You can use it for feature delivery, bug fixing, refactors, and repetitive engineering tasks while keeping humans in control.
+
+---
+
+## What You Get
+
+### 1) Natural Language to Working Code
+Describe what you want in simple English:
+
+> "Add forgot-password flow with email token and tests."
+
+The agent plans, edits, validates, and iterates.
+
+### 2) Real Codebase Awareness
+It scans your project and tracks symbols/imports so it can make grounded changes.
+
+### 3) Plan -> Act -> Verify Loop
+Not one-shot guessing. It uses iterative steps and verifies work using commands.
+
+### 4) Diff Approval Before Writes
+Every write is previewed with a unified diff and requires approval.
+
+### 5) Team Safety
+Policy rules, secret detection, and audit logs make it safer to adopt in shared repos.
+
+### 6) Multi-Interface Usage
+Use whichever fits your workflow:
+
+- CLI (`vibe-agent`)
+- JavaScript SDK (`ultimate-vibe-agent`)
+- Python wrapper SDK (`vibe_agent_sdk`)
+
+---
+
+## Quick Start
+
+### 1) Install dependencies
+
+```bash
+npm install
+```
+
+### 2) Configure provider
+
+Create `.env` (or copy `.env.example`) and set:
 
 ```env
 GROQ_API_KEY=your_groq_api_key_here
@@ -22,42 +76,109 @@ VIBE_MODEL=moonshotai/kimi-k2-instruct-0905
 VIBE_BASE_URL=https://api.groq.com/openai/v1
 ```
 
-## Install and Run
+### 3) Run interactive mode
 
 ```bash
-npm install
 npm run dev
 ```
 
-One-shot task:
+### 4) Run one-shot task
 
 ```bash
-npm run dev -- --goal "add tests for auth middleware"
+npm run dev -- --goal "add onboarding checklist feature with tests"
 ```
 
-Build:
+---
+
+## CLI Usage
+
+If installed globally:
 
 ```bash
-npm run check
-npm run build
-npm run start
+npm install -g ultimate-vibe-agent
+vibe-agent
 ```
 
-Landing page preview:
+Useful commands inside chat:
+
+- `/task <goal>` run a task
+- `/config` view active runtime settings
+- `/help` command help
+- `/exit` quit
+
+---
+
+## JavaScript SDK Example
+
+```ts
+import { CodingAgent, loadRuntimeConfig } from "ultimate-vibe-agent";
+
+const config = loadRuntimeConfig(process.cwd(), {
+  model: "moonshotai/kimi-k2-instruct-0905",
+  baseUrl: "https://api.groq.com/openai/v1",
+  maxIterations: 8,
+});
+
+const agent = new CodingAgent(config);
+
+const ui = {
+  info: console.log,
+  warn: console.warn,
+  error: console.error,
+  ask: async () => "continue",
+  confirm: async () => true,
+};
+
+await agent.runTask("refactor auth flow and add regression tests", ui);
+```
+
+---
+
+## Python SDK Example
+
+```python
+from vibe_agent_sdk import VibeAgentClient
+
+client = VibeAgentClient(
+    executable="vibe-agent",
+    env={
+        "GROQ_API_KEY": "your-key",
+        "VIBE_MODEL": "moonshotai/kimi-k2-instruct-0905",
+        "VIBE_BASE_URL": "https://api.groq.com/openai/v1",
+    },
+)
+
+result = client.run_task(
+    "optimize product search endpoint and add tests",
+    max_iterations=6,
+    check=False,
+)
+
+print(result.returncode)
+print(result.stdout)
+```
+
+Install Python package:
 
 ```bash
-npm run landing:serve
+pip install ultimate-vibe-agent
 ```
 
-Then open `http://localhost:4173`.
+or
 
-## Core Agent Tools
+```bash
+uv pip install ultimate-vibe-agent
+```
+
+---
+
+## Core Tooling Built In
 
 - `list_files`
 - `read_file`
 - `grep`
 - `run_command`
-- `write_file` (manual approval required)
+- `write_file` (approval required)
 - `scan_project`
 - `symbol_lookup`
 - `find_references`
@@ -65,126 +186,107 @@ Then open `http://localhost:4173`.
 - `memory_set`
 - `memory_get`
 
-## Week 3-4 Delivered: Real Codebase Awareness
+---
 
-- Project scanning into `.vibe-agent/index/project-index.json`
-- Symbol indexing:
-  - TS/JS via TypeScript AST
-  - Python via structured parser
-- Import/use tracking
-- Dependency mapping:
-  - `package.json` deps/devDeps
-  - `requirements*.txt`
-  - `pyproject.toml` (project/poetry sections)
+## Product Workflow (What Users Experience)
 
-## Week 5-6 Delivered: Reliability Loop
+1. User describes a feature in plain English.
+2. Agent plans concrete steps.
+3. Agent inspects and edits relevant files.
+4. User reviews diffs before write.
+5. Agent runs verification commands.
+6. Agent retries fixes if checks fail.
+7. User gets a change summary and audit trail.
 
-- Auto verify command discovery after edits (test/lint/format/typecheck where available)
-- Stack trace parsing (JS/TS + Python)
-- Auto-repair loop limit via `VIBE_AUTO_REPAIR_ROUNDS`
-- Optional rollback prompt for unresolved failures
+---
 
-## Week 7 Delivered: Memory + Conventions
+## Safety and Governance
 
-- Persistent memory stored in `.vibe-agent/memory.json`
-- Stores:
-  - project rules
-  - architecture notes
-  - common commands
-  - key/value conventions
-- Memory is loaded into every task context and updated by model output
+Default safety behavior includes:
 
-## Week 9 Delivered: Security + Team UX
+- command policy controls
+- blocked sensitive write paths (like `.env`, `.git/*`)
+- secret pattern detection before writes
+- full session audit logs
+- rollback option for unresolved bad sessions
 
-- Policy file at `.vibe-agent/policy.json`
-  - command allow/deny rules
-  - blocked write globs
-  - secret-handling toggle
-- Secret detection blocks unsafe writes by default
-- Full audit trail at `.vibe-agent/audit/<session>.jsonl`
-- End-of-task change summary with line stats
+State and logs are stored under:
 
-## Runtime Config
+- `.vibe-agent/memory.json`
+- `.vibe-agent/policy.json`
+- `.vibe-agent/index/project-index.json`
+- `.vibe-agent/audit/*.jsonl`
 
-See `.env.example` for all values:
+---
 
-- `VIBE_MAX_ITERATIONS`
-- `VIBE_TOOL_TIMEOUT_MS`
-- `VIBE_MAX_TOOL_OUTPUT_CHARS`
-- `VIBE_MAX_SCAN_FILES`
-- `VIBE_AUTO_REPAIR_ROUNDS`
-- `VIBE_AUTO_VERIFY`
-- `VIBE_STATE_DIR`
+## Configuration
 
-## SDK and Packaging
+| Variable | Purpose | Default |
+|---|---|---|
+| `GROQ_API_KEY` | Provider API key | empty |
+| `VIBE_API_KEY` | Generic API key override | empty |
+| `VIBE_MODEL` | Model name | `moonshotai/kimi-k2-instruct-0905` |
+| `VIBE_BASE_URL` | OpenAI-compatible endpoint | `https://api.groq.com/openai/v1` |
+| `VIBE_MAX_ITERATIONS` | Max loop rounds | `6` |
+| `VIBE_TOOL_TIMEOUT_MS` | Tool timeout | `120000` |
+| `VIBE_MAX_TOOL_OUTPUT_CHARS` | Output truncation limit | `18000` |
+| `VIBE_MAX_SCAN_FILES` | Indexing limit | `6000` |
+| `VIBE_AUTO_REPAIR_ROUNDS` | Retry cap for repeated failures | `3` |
+| `VIBE_AUTO_VERIFY` | Auto-run detected verify commands | `true` |
+| `VIBE_STATE_DIR` | Agent state directory | `.vibe-agent` |
 
-### JS SDK (npm)
+---
 
-This package now exports a JS SDK surface:
+## Landing Page
 
-```ts
-import { CodingAgent, loadRuntimeConfig } from "ultimate-vibe-agent";
-```
-
-Dry-run package check:
+Preview locally:
 
 ```bash
-npm run pack:dry
+npm run landing:serve
 ```
 
-Automated npm publish workflow:
+Then open:
 
-- `.github/workflows/release-npm.yml`
-- tag format: `v*`
+`http://localhost:4173`
 
-### Python SDK (PyPI)
+For Vercel deployment:
 
-Python package scaffold is in:
+- Root Directory: `landing`
 
-- `packages/python-sdk`
+---
 
-Install locally:
+## Build and Validation
 
 ```bash
-pip install -e packages/python-sdk
+npm run check
+npm run build
+npm run start
 ```
 
-or
+Python build:
 
 ```bash
-uv pip install -e packages/python-sdk
+npm run build:py
 ```
 
-Build:
+---
+
+## Release
+
+Automated publish setup exists for both npm and PyPI.
+
+Use one command after version bump and commit:
 
 ```bash
-cd packages/python-sdk
-python -m build
+release.cmd 0.1.1
 ```
 
-Automated PyPI publish workflow:
+Detailed checklist:
 
-- `.github/workflows/release-pypi.yml`
-- tag format: `v*`
+- `docs/release-plan.md`
 
-Detailed release checklist: `docs/release-plan.md`
+---
 
-## One Command Release
+## License
 
-If both versions are already updated and committed:
-
-```bash
-release.cmd 0.1.0
-```
-
-This will:
-
-1. Validate version sync (`package.json` + `packages/python-sdk/pyproject.toml`)
-2. Run checks/builds
-3. Push tag `v0.1.0`
-4. Trigger both GitHub release workflows (npm + PyPI)
-
-PyPI token note:
-
-- If PyPI Trusted Publishing is configured, no token is needed.
-- Without trusted publishing, you must use a PyPI API token workflow instead.
+MIT - see `LICENSE`.
