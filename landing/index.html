@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ultimate-vibe-agent | Build Coding Agents That Actually Verify</title>
+  <title>ultimate-vibe-agent | AI Coding Teammate for Real Products</title>
   <meta
     name="description"
-    content="A production-minded coding agent SDK with project awareness, tool execution, verification loops, memory, security guardrails, and release automation."
+    content="Turn product ideas into working code in your real repository. Chat in plain English, review diffs, run checks, and ship faster."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,9 +28,9 @@
     </a>
     <nav class="nav">
       <a href="#features">Features</a>
+      <a href="#use-cases">Use Cases</a>
       <a href="#examples">Examples</a>
-      <a href="#security">Security</a>
-      <a href="#release">Release</a>
+      <a href="#security">Trust</a>
       <a href="#faq">FAQ</a>
     </nav>
     <a class="btn btn-outline" href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
@@ -38,136 +38,157 @@
 
   <main id="top">
     <section class="hero reveal">
-      <p class="kicker">SDK + CLI for serious vibecoding</p>
-      <h1>Talk in English. Get context-aware code that plans, verifies, and self-corrects.</h1>
+      <p class="kicker">AI Pair Programmer for Product Teams</p>
+      <h1>Describe the feature. Get working code you can actually ship.</h1>
       <p class="hero-copy">
-        Not a demo bot. This agent reads your real codebase, runs tools, checks failures,
-        and keeps project memory so it improves over time.
+        ultimate-vibe-agent works inside your real codebase. You ask in plain English,
+        it proposes changes, runs checks, and helps you finish features faster with less rework.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#quickstart">Quick Start</a>
-        <a class="btn btn-ghost" href="#examples">See SDK Examples</a>
+        <a class="btn btn-primary" href="#quickstart">Start in 2 Minutes</a>
+        <a class="btn btn-ghost" href="#examples">See Real Examples</a>
       </div>
       <div class="hero-metrics">
         <article>
-          <h3>Plan -> Act -> Verify</h3>
-          <p>Iterative loops with auto-verify after edits.</p>
+          <h3>Ship Faster</h3>
+          <p>Move from idea to merge-ready code without bouncing between tools.</p>
         </article>
         <article>
-          <h3>TS/JS + Python Aware</h3>
-          <p>Project scanner, symbols, imports, references, dependency maps.</p>
+          <h3>Fewer Broken PRs</h3>
+          <p>Checks run during the workflow, so bad changes get caught early.</p>
         </article>
         <article>
-          <h3>Security First</h3>
-          <p>Policy gates, secret checks, audit logs, rollback support.</p>
+          <h3>Safer Team Adoption</h3>
+          <p>Diff approval and policy rules keep control in your hands.</p>
         </article>
       </div>
     </section>
 
     <section class="trust reveal">
-      <p>Works with</p>
+      <p>Used for</p>
       <div class="trust-badges">
-        <span>Groq + Kimi</span>
-        <span>npm</span>
-        <span>PyPI</span>
-        <span>uv pip</span>
-        <span>GitHub Actions</span>
+        <span>SaaS product teams</span>
+        <span>Startup MVPs</span>
+        <span>Internal tools</span>
+        <span>Client delivery</span>
+        <span>Fast bugfix cycles</span>
       </div>
     </section>
 
     <section id="features" class="section reveal">
       <div class="section-head">
-        <p class="kicker">Core Capabilities</p>
-        <h2>Everything needed for a real coding agent</h2>
+        <p class="kicker">Why People Choose It</p>
+        <h2>Built for real daily development, not demo-only prompts</h2>
       </div>
       <div class="feature-grid">
         <article class="card">
-          <h3>Codebase Awareness</h3>
-          <p>Scans folders, indexes symbols, maps imports/usages, and understands dependencies.</p>
+          <h3>Natural Language to Code</h3>
+          <p>Explain features in plain English and get code changes aligned to your existing project.</p>
         </article>
         <article class="card">
-          <h3>Tool Execution</h3>
-          <p>Reads/writes files, searches with grep, runs shell commands, and returns real outputs.</p>
+          <h3>Understands Your Repo</h3>
+          <p>Reads multiple files, project structure, and dependencies before making decisions.</p>
         </article>
         <article class="card">
-          <h3>Reliability Loop</h3>
-          <p>Runs verify commands, parses stack traces, retries fixes, and prompts rollback if needed.</p>
+          <h3>Debugs with You</h3>
+          <p>Runs commands, reads failures, and iterates instead of pretending success.</p>
         </article>
         <article class="card">
-          <h3>Diff-Based Editing</h3>
-          <p>Shows unified diff before writes and requests manual approval to prevent accidental damage.</p>
+          <h3>Review Before Apply</h3>
+          <p>You always see diffs and approve writes, so changes stay transparent and controlled.</p>
         </article>
         <article class="card">
-          <h3>Memory Across Sessions</h3>
-          <p>Stores project rules, architecture notes, and common commands in persistent memory.</p>
+          <h3>Learns Team Conventions</h3>
+          <p>Remembers architecture choices and coding rules across sessions.</p>
         </article>
         <article class="card">
-          <h3>Safety and Audit</h3>
-          <p>Policy file guardrails, secret detection, blocked command rules, and full JSONL audit trails.</p>
+          <h3>Works Across Ecosystems</h3>
+          <p>Use CLI, JS SDK, or Python SDK in product workflows and automation pipelines.</p>
         </article>
       </div>
     </section>
 
     <section class="section workflow reveal">
       <div class="section-head">
-        <p class="kicker">How It Works</p>
-        <h2>From prompt to verified patch</h2>
+        <p class="kicker">Daily Workflow</p>
+        <h2>How teams use it to deliver features</h2>
       </div>
       <ol class="steps">
         <li>
           <span>01</span>
           <div>
-            <h3>Scan + Context Build</h3>
-            <p>Agent builds project index and loads memory + policy settings.</p>
+            <h3>Give the task in plain English</h3>
+            <p>Example: "Add forgot-password flow with email + tests."</p>
           </div>
         </li>
         <li>
           <span>02</span>
           <div>
-            <h3>Structured Plan</h3>
-            <p>Model returns JSON with plan, tool actions, verify commands, and optional memory updates.</p>
+            <h3>Review the proposed plan</h3>
+            <p>Agent breaks work into small steps so implementation stays clear.</p>
           </div>
         </li>
         <li>
           <span>03</span>
           <div>
-            <h3>Action + Diff Approval</h3>
-            <p>Tools execute, diffs are shown, writes require manual approval.</p>
+            <h3>Approve code changes</h3>
+            <p>You review diffs and keep full control over what gets written.</p>
           </div>
         </li>
         <li>
           <span>04</span>
           <div>
-            <h3>Verify + Repair</h3>
-            <p>Tests/lint/format run, stack traces parsed, retries continue until done or stopped.</p>
+            <h3>Validate and ship</h3>
+            <p>It runs checks, fixes failures, and helps produce merge-ready output.</p>
           </div>
         </li>
       </ol>
     </section>
 
+    <section id="use-cases" class="section reveal">
+      <div class="section-head">
+        <p class="kicker">Who It Is For</p>
+        <h2>Product-focused use cases</h2>
+      </div>
+      <div class="release-grid">
+        <article class="card">
+          <h3>Founders and Indie Builders</h3>
+          <p>Ship MVP features quickly, iterate faster, and reduce context-switching while building alone.</p>
+        </article>
+        <article class="card">
+          <h3>Product Engineering Teams</h3>
+          <p>Accelerate bugfixes, repetitive refactors, and feature delivery while keeping review quality high.</p>
+        </article>
+        <article class="card">
+          <h3>Agencies and Freelancers</h3>
+          <p>Move client work from idea to implementation faster with safer edits and clear change history.</p>
+        </article>
+      </div>
+    </section>
+
     <section id="examples" class="section reveal">
       <div class="section-head">
-        <p class="kicker">Implementation Examples</p>
-        <h2>Use it as CLI, JS SDK, or Python SDK</h2>
+        <p class="kicker">Rich Examples</p>
+        <h2>Drop-in implementations teams can use right away</h2>
       </div>
       <div class="tabs" role="tablist" aria-label="SDK code examples">
         <button class="tab is-active" role="tab" aria-selected="true" data-target="tab-js">JavaScript</button>
         <button class="tab" role="tab" aria-selected="false" data-target="tab-python">Python</button>
         <button class="tab" role="tab" aria-selected="false" data-target="tab-cli">CLI</button>
-        <button class="tab" role="tab" aria-selected="false" data-target="tab-release">Release</button>
+        <button class="tab" role="tab" aria-selected="false" data-target="tab-recipes">Prompt Recipes</button>
       </div>
 
       <article id="tab-js" class="code-card tab-panel is-active" role="tabpanel">
         <header>
-          <h3>Node / TypeScript SDK</h3>
+          <h3>JS SDK: build feature from product request</h3>
           <button class="copy-btn" data-copy="#code-js">Copy</button>
         </header>
         <pre id="code-js"><code class="language-ts">import { CodingAgent, loadRuntimeConfig } from "ultimate-vibe-agent";
 
 const config = loadRuntimeConfig(process.cwd(), {
-  maxIterations: 8,
   model: "moonshotai/kimi-k2-instruct-0905",
   baseUrl: "https://api.groq.com/openai/v1",
+  maxIterations: 8,
 });
 
 const agent = new CodingAgent(config);
@@ -176,19 +197,19 @@ const ui = {
   info: console.log,
   warn: console.warn,
   error: console.error,
-  ask: async (q: string) => "continue",
-  confirm: async (q: string) => true,
+  ask: async () => "continue",
+  confirm: async (q: string) => !q.includes("dangerous"),
 };
 
 await agent.runTask(
-  "refactor auth middleware and add tests for edge cases",
+  "Add role-based dashboard access and update tests for admin/user flows",
   ui,
 );</code></pre>
       </article>
 
       <article id="tab-python" class="code-card tab-panel" role="tabpanel">
         <header>
-          <h3>Python SDK Wrapper</h3>
+          <h3>Python SDK: run from backend automation</h3>
           <button class="copy-btn" data-copy="#code-python">Copy</button>
         </header>
         <pre id="code-python"><code class="language-py">from vibe_agent_sdk import VibeAgentClient
@@ -203,7 +224,7 @@ client = VibeAgentClient(
 )
 
 result = client.run_task(
-    "create an API retry utility and tests",
+    "Optimize search endpoint latency and add regression tests",
     max_iterations=6,
     check=False,
 )
@@ -214,59 +235,58 @@ print(result.stdout)</code></pre>
 
       <article id="tab-cli" class="code-card tab-panel" role="tabpanel">
         <header>
-          <h3>CLI Workflow</h3>
+          <h3>CLI: fastest way for daily product work</h3>
           <button class="copy-btn" data-copy="#code-cli">Copy</button>
         </header>
         <pre id="code-cli"><code class="language-bash"># install
 npm install -g ultimate-vibe-agent
 
-# start interactive mode
+# interactive mode
 vibe-agent
 
-# one-shot mode
-vibe-agent --goal "add JWT auth and integration tests"
+# run focused task
+vibe-agent --goal "add onboarding checklist feature with tests"
 
-# inspect runtime config inside chat
+# see active runtime setup
 /config</code></pre>
       </article>
 
-      <article id="tab-release" class="code-card tab-panel" role="tabpanel">
+      <article id="tab-recipes" class="code-card tab-panel" role="tabpanel">
         <header>
-          <h3>Automated Publish (npm + PyPI)</h3>
-          <button class="copy-btn" data-copy="#code-release">Copy</button>
+          <h3>Prompt recipes for product teams</h3>
+          <button class="copy-btn" data-copy="#code-recipes">Copy</button>
         </header>
-        <pre id="code-release"><code class="language-bash"># 1) bump versions in both files to 0.1.1
-# package.json
-# packages/python-sdk/pyproject.toml
+        <pre id="code-recipes"><code class="language-bash"># Feature delivery
+"Create a billing usage page with pagination and export CSV."
 
-# 2) commit + push
-git add package.json packages/python-sdk/pyproject.toml
-git commit -m "release: v0.1.1"
-git push
+# Bug fix
+"Fix duplicate webhook processing and add a regression test."
 
-# 3) run from repo root
-release.cmd 0.1.1
+# Refactor
+"Split auth service into token service + session service without behavior change."
 
-# this pushes tag v0.1.1 and triggers both workflows:
-# - Release NPM
-# - Release PyPI</code></pre>
+# Reliability hardening
+"Add retry + timeout handling for payment API and update tests."
+
+# Team conventions
+"Use our existing folder structure and keep all changes minimal." </code></pre>
       </article>
     </section>
 
     <section id="quickstart" class="section split reveal">
       <div>
         <p class="kicker">Quick Start</p>
-        <h2>Get running in under 2 minutes</h2>
+        <h2>First useful result in minutes</h2>
         <ol class="plain-list">
-          <li>Set provider env in `.env` (`GROQ_API_KEY`, model, base URL).</li>
+          <li>Add provider keys in `.env`.</li>
           <li>Run `npm install` and `npm run dev`.</li>
-          <li>Give a task in English. Approve diffs before writes.</li>
-          <li>Use `/config` to inspect active model, limits, and state dir.</li>
+          <li>Describe one feature or bug in plain English.</li>
+          <li>Review diffs, approve changes, and ship.</li>
         </ol>
       </div>
       <article class="code-card compact">
         <header>
-          <h3>.env example</h3>
+          <h3>.env starter</h3>
           <button class="copy-btn" data-copy="#code-env">Copy</button>
         </header>
         <pre id="code-env"><code class="language-env">GROQ_API_KEY=your_groq_api_key_here
@@ -280,65 +300,21 @@ VIBE_STATE_DIR=.vibe-agent</code></pre>
 
     <section id="security" class="section reveal">
       <div class="section-head">
-        <p class="kicker">Policy and Safety</p>
-        <h2>Guardrails built for team usage</h2>
+        <p class="kicker">Team Trust</p>
+        <h2>Safe enough for real repos and client work</h2>
       </div>
       <div class="security-grid">
         <article class="card">
-          <h3>Permission Policy</h3>
-          <p>Block dangerous command patterns and protected file paths from writes.</p>
+          <h3>Human-in-the-loop by default</h3>
+          <p>No hidden file rewrites. Every code change can be reviewed before apply.</p>
         </article>
         <article class="card">
-          <h3>Secret Detection</h3>
-          <p>Detects common credential patterns before write operations are applied.</p>
+          <h3>Policy controls</h3>
+          <p>Block risky commands and sensitive paths for safer team-wide usage.</p>
         </article>
         <article class="card">
-          <h3>Audit Trail</h3>
-          <p>Every task loop can be traced via JSONL events in `.vibe-agent/audit`.</p>
-        </article>
-      </div>
-      <article class="code-card compact">
-        <header>
-          <h3>Policy file sample (`.vibe-agent/policy.json`)</h3>
-          <button class="copy-btn" data-copy="#code-policy">Copy</button>
-        </header>
-        <pre id="code-policy"><code class="language-json">{
-  "allowRunCommand": true,
-  "allowWrite": true,
-  "allowedCommandPrefixes": [],
-  "blockedCommandPatterns": [
-    "rm\\\\s+-rf\\\\s+/",
-    "curl\\\\s+.+\\\\|\\\\s*sh\\\\b"
-  ],
-  "blockedWriteGlobs": [
-    ".env",
-    ".env.*",
-    "**/.env",
-    "**/.env.*",
-    ".git/**"
-  ],
-  "allowPotentialSecrets": false
-}</code></pre>
-      </article>
-    </section>
-
-    <section id="release" class="section reveal">
-      <div class="section-head">
-        <p class="kicker">Release Pipeline</p>
-        <h2>Ship both ecosystems from one tag</h2>
-      </div>
-      <div class="release-grid">
-        <article class="card">
-          <h3>NPM Workflow</h3>
-          <p>`release-npm.yml` builds and publishes with provenance on tag `v*`.</p>
-        </article>
-        <article class="card">
-          <h3>PyPI Workflow</h3>
-          <p>`release-pypi.yml` builds wheel/sdist and publishes via trusted publisher.</p>
-        </article>
-        <article class="card">
-          <h3>One Command</h3>
-          <p>Use `release.cmd X.Y.Z` from repo root to validate, tag, and trigger both releases.</p>
+          <h3>Audit visibility</h3>
+          <p>Track what happened, when, and why with detailed session logs.</p>
         </article>
       </div>
     </section>
@@ -346,23 +322,23 @@ VIBE_STATE_DIR=.vibe-agent</code></pre>
     <section id="faq" class="section faq reveal">
       <div class="section-head">
         <p class="kicker">FAQ</p>
-        <h2>Common setup questions</h2>
+        <h2>What product teams ask most</h2>
       </div>
       <details>
-        <summary>Do I need a PyPI token?</summary>
-        <p>No, if you use PyPI Trusted Publishing (OIDC). If not configured, use API token publishing.</p>
+        <summary>Can junior engineers use this safely?</summary>
+        <p>Yes. Diff approval and guardrails let teams adopt it without losing control.</p>
       </details>
       <details>
-        <summary>Can I use a model provider other than OpenAI?</summary>
-        <p>Yes. The SDK uses OpenAI-compatible endpoints. Groq + Kimi is already configured.</p>
+        <summary>Will it work with an existing codebase?</summary>
+        <p>Yes. It is designed for existing repos, not only greenfield projects.</p>
       </details>
       <details>
-        <summary>Where does memory live?</summary>
-        <p>In `.vibe-agent/memory.json` by default. Change path with `VIBE_STATE_DIR`.</p>
+        <summary>Is it only for JavaScript teams?</summary>
+        <p>No. It supports JS/TS and Python workflows with CLI, JS SDK, and Python SDK usage.</p>
       </details>
       <details>
-        <summary>How do I prevent dangerous commands?</summary>
-        <p>Set command rules in `.vibe-agent/policy.json` (`allowedCommandPrefixes`, `blockedCommandPatterns`).</p>
+        <summary>Can non-technical product people use it?</summary>
+        <p>They can write requests in plain English, while engineers review and approve final code changes.</p>
       </details>
     </section>
   </main>
@@ -370,10 +346,10 @@ VIBE_STATE_DIR=.vibe-agent</code></pre>
   <footer class="footer">
     <div>
       <strong>ultimate-vibe-agent</strong>
-      <p>Context-aware coding agent SDK for teams who need verified output, not guesses.</p>
+      <p>From product request to working code, faster and safer.</p>
     </div>
     <div class="footer-actions">
-      <a class="btn btn-primary" href="#quickstart">Start Building</a>
+      <a class="btn btn-primary" href="#quickstart">Try It Now</a>
       <a class="btn btn-outline" href="https://github.com" target="_blank" rel="noreferrer">View Repository</a>
     </div>
   </footer>
