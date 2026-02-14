@@ -43,6 +43,14 @@ npm run build
 npm run start
 ```
 
+Landing page preview:
+
+```bash
+npm run landing:serve
+```
+
+Then open `http://localhost:4173`.
+
 ## Core Agent Tools
 
 - `list_files`

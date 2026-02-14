@@ -24,6 +24,7 @@
     "build": "tsc -p tsconfig.json",
     "check": "tsc -p tsconfig.json --noEmit",
     "start": "node dist/cli.js",
+    "landing:serve": "python -m http.server 4173 --directory landing",
     "pack:dry": "npm pack --dry-run",
     "build:py": "python -m build packages/python-sdk"
   },
